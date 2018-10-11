@@ -23,11 +23,15 @@ class ViewController: UIViewController{
     
     func playTone(tagID : Int) {
         let soundPlay = Bundle.main.url(forResource: "note\(tagID)", withExtension: "wav")
+       
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: soundPlay!)
+            
         } catch {
             print (error)
+            
         }
+        
         audioPlayer.play()
        
     }
